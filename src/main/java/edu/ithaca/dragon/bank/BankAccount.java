@@ -56,4 +56,13 @@ public class BankAccount {
             return true;
         }
     }
+
+    /**
+     * @post returns true if double given is positive and has less than three decimal points.
+     * Returns false otherwise.
+     */
+
+    public static boolean isAmountValid(double amount){
+        return false;
+    }
 }
