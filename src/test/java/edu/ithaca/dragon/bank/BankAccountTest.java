@@ -24,6 +24,7 @@ class BankAccountTest {
         assertThrows(IllegalArgumentException.class, ()-> bankAccount.withdraw(200));
         assertThrows(IllegalArgumentException.class, ()->bankAccount.withdraw(-100));
         assertThrows(IllegalArgumentException.class, ()->bankAccount.withdraw(0));
+        assertThrows(IllegalArgumentException.class, ()-> bankAccount.withdraw(200.555));
     }
 
     @Test
@@ -56,6 +57,8 @@ class BankAccountTest {
         assertEquals(200, bankAccount.getBalance());
         //check for exception thrown correctly
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100));
+        assertThrows(IllegalArgumentException.class, ()-> new BankAccount("a@b.com", 100.555));
+        assertThrows(IllegalArgumentException.class, ()-> new BankAccount("a@b.com", -2));
     }
 
 }
