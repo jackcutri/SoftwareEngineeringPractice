@@ -34,6 +34,13 @@ public class BankAccount {
 
     }
 
+    /**
+     * @post returns false if the email address is invalid, true if it is valid.
+     * For an address to be valid, it must have a valid prefix (at least one letter, number,
+     * underscore, period, or dash.  Underscores, periods, and dashes must be followed by at
+     * least one number of letter) followed by an @, and then a valid domain (at least one
+     * letter, number or dash followed by a . and at least two letters).
+     */
 
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
