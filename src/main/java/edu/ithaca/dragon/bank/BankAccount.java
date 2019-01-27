@@ -31,8 +31,11 @@ public class BankAccount {
      * Will throw IllegalArgumentException otherwise.
      */
     public void withdraw (double amount)  {
-        balance -= amount;
-
+        if(amount>0 && amount<balance){
+            balance-=amount;
+        }else{
+            throw new IllegalArgumentException("The amount must be positive, and less than the balance.");
+        }
     }
 
     /**

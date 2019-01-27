@@ -2,6 +2,8 @@ package edu.ithaca.dragon.bank;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Executable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankAccountTest {
@@ -19,9 +21,9 @@ class BankAccountTest {
         bankAccount.withdraw(100);
         assertEquals(100, bankAccount.getBalance());
 
-        assertThrows(IllegalArgumentException.class, bankAccount.withdraw(200));
-        assertThrows(IllegalArgumentException.class, bankAccount.withdraw(-100));
-        assertThrows(IllegalArgumentException.class, bankAccount.withdraw(0));
+        assertThrows(IllegalArgumentException.class, ()-> bankAccount.withdraw(200));
+        assertThrows(IllegalArgumentException.class, ()->bankAccount.withdraw(-100));
+        assertThrows(IllegalArgumentException.class, ()->bankAccount.withdraw(0));
     }
 
     @Test
