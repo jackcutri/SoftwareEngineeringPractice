@@ -38,6 +38,7 @@ class BankAccountTest {
         assertFalse(BankAccount.isEmailValid(".@b.com"));
         assertFalse(BankAccount.isEmailValid("a.b@b.c"));
         assertFalse(BankAccount.isEmailValid("@"));
+        assertFalse(BankAccount.isEmailValid(" "));
     }
 
     @Test
